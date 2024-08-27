@@ -23,6 +23,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/" element={<App />} >
 
           <Route path="messages" element={<Messages />} />
+          <Route path="blog" element={<Blog />} />
 
         </Route>
 

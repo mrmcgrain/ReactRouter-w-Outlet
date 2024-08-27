@@ -1,5 +1,5 @@
 import React from 'react'
-import { useOutlet } from "react-router-dom"
+import { useOutlet} from "react-router-dom"
 import Landing from "../Landing/Landing"
 
 import "./center.css"
@@ -20,6 +20,7 @@ const Center = () => {
 
                 {/* <h1>center</h1> */}
 
+                {/* <Outlet /> */}
 
                 {outlet ? outlet : <Landing />}
 

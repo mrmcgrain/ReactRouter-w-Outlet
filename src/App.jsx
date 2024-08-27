@@ -10,7 +10,7 @@ import Footer from "./Components/Footer/Footer"
 
 import Layout from './Components/Layout/Layout'
 
-import { useOutlet } from 'react-router-dom'
+import { useOutlet, Outlet } from 'react-router-dom'
 
 function App() {
 
@@ -38,13 +38,21 @@ function App() {
           </Center>
 
           {/* <Layout /> */}
-          
+
           <Right>
-            {/* {outlet2 ? outlet2 : <p>outlet2</p>} */}
+            <div>
+              <p>I am a child, here me ROAR</p>
+              <p>I am a child, here me ROAR</p>
+              <p>I am a child, here me ROAR</p>
+            </div>
+
           </Right >
 
         </div>
 
+
+        {/* {outlet2 ? outlet2 : <p>outlet2</p>} */}
+        {/* <Outlet /> */}
 
         <Footer />
         {/* {outlet2 ? outlet2 : <Footer />} */}

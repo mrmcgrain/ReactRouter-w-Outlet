@@ -1,6 +1,7 @@
 import React from 'react'
 import "./footer.css"
 
+import { Outlet } from 'react-router-dom'
 
 
 const Footer = () => {
@@ -14,7 +15,7 @@ const Footer = () => {
                 Footer
             </div>
 
-
+            {/* <Outlet /> */}
 
         </>
     )
