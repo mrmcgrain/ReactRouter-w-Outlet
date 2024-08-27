@@ -29,7 +29,7 @@ const Blog = () => {
   const handleSubmit = () => {
     if (newBlog.length > 0) {
       setBlogs((prev) => {
-        return [newBlog, ...prev];
+        return [...prev, newBlog];
       });
       setNewBlog("")
     }
@@ -48,22 +48,35 @@ const Blog = () => {
     console.log("filter", filter)
   }
 
-//////////////////////////////////////////////////////////
+  //////////////////////////////////////////////////////////
 
   const handleUpdateEdit = (id, editPost) => {
     console.log("handleUpdateEdit", id)
     console.warn("id =", id, "editPost = ", editPost)
-    console.warn("where?", blogs.indexOf(id))
+    console.warn("blogs.indexOf(id)", blogs.indexOf(id))
 
     let index = blogs.indexOf(id)
-    console.warn("slice(1,index)", blogs.slice(0, index))
-    console.warn("slice(index)", blogs.slice(index + 1))
 
-    console.warn([...blogs.slice(0, index), editPost, ...blogs.slice(index + 1)])
+    // console.warn("slice(1,index)", blogs.slice(0, index))
+    // console.warn("slice(index)", blogs.slice(index + 1))
 
-      setBlogs([...blogs.slice(0, index), editPost, ...blogs.slice(index + 1)])
+    // console.warn([...blogs.slice(0, index), editPost, ...blogs.slice(index + 1)])
+
+    // setBlogs([...blogs.slice(0, index), editPost, ...blogs.slice(index + 1)])
+
+    let temp = [...blogs]   //create copy of state [ ]
+
+    console.log("temp", temp)
+
+    temp[index] = editPost  //  bracket notation to change value of a specific index to "editpost"
+
+    console.log("all blogs", temp)
+
+    setBlogs(temp)   //  set State to the new array with the updated content
+
+
     //here we set state to include edited item with slice()
-
+    // let arr = [   1,    2,    3   ]
   }
 
   //use slice to copy before and after it with modified entry
@@ -96,8 +109,8 @@ const Blog = () => {
 
               return (
 
-                <Card key={item} 
-                item={item} handleUpdateEdit={handleUpdateEdit} handleDelete={handleDelete} />
+                <Card key={item}
+                  item={item} handleUpdateEdit={handleUpdateEdit} handleDelete={handleDelete} />
 
               )
             })

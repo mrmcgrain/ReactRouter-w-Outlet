@@ -4,15 +4,13 @@ const Card = ({ item, handleDelete, handleUpdateEdit }) => {
 
     const [edit, setEdit] = useState(false) // T / F flag for my conditional rendering
 
-    const [editPost, setEditPost] = useState(item)
+    const [editPost, setEditPost] = useState(item) // the state for the changing post
 
-    const handleEdit = (e, id) => {
+    const handleEdit = (e, id) => {  // Changes the state edit to trigger boolean for conditional rendering
 
         console.log("Edit HIT", e.target.id, id)
 
-        // if (id === e.target.id) {
-            setEdit(!edit)
-        // }
+        setEdit(!edit)
     }
 
     const handleEditChange = (e) => {
@@ -22,7 +20,7 @@ const Card = ({ item, handleDelete, handleUpdateEdit }) => {
 
     const handleSubmit = (e) => {
         setEdit(!edit)
-        handleUpdateEdit(e, editPost)
+        handleUpdateEdit(e.target.id, editPost)
     }
 
     return (
@@ -47,7 +45,9 @@ const Card = ({ item, handleDelete, handleUpdateEdit }) => {
                         <div>
                             <button
                                 id={item}
-                                onClick={(e) => handleSubmit(e.target.id)}>update</button>
+                                onClick={(e) => handleSubmit(e)}>
+                                update
+                            </button>
                         </div>
 
                     </div>
