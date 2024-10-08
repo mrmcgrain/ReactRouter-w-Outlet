@@ -10,6 +10,8 @@ import Blog from "./Components/Blog/Blog.jsx"
 
 import Right from "./Components/Right/Right.jsx"
 
+import Login from "./Components/Login/Login.jsx"
+
 createRoot(document.getElementById('root')).render(
   <StrictMode>
 
@@ -19,17 +21,14 @@ createRoot(document.getElementById('root')).render(
       <Routes>
 
 
+        <Route path="/" element={<Login />} />
 
-        <Route path="/" element={<App />} >
+        <Route path="loggedIn" element={<App />} >
 
           <Route path="messages" element={<Messages />} />
           <Route path="blog" element={<Blog />} />
 
         </Route>
-
-        {/* <Route path="/" element={<App />} > */}
-        {/* <Route path="blog" element={<Blog />} /> */}
-        {/* </Route> */}
 
       </Routes>
 

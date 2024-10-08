@@ -55,20 +55,21 @@ const Blog = () => {
     console.warn("id =", id, "editPost = ", editPost)
     console.warn("blogs.indexOf(id)", blogs.indexOf(id))
 
-    let index = blogs.indexOf(id)
-
+    
     // console.warn("slice(1,index)", blogs.slice(0, index))
     // console.warn("slice(index)", blogs.slice(index + 1))
-
+    
     // console.warn([...blogs.slice(0, index), editPost, ...blogs.slice(index + 1)])
-
+    
     // setBlogs([...blogs.slice(0, index), editPost, ...blogs.slice(index + 1)])
+    let index = blogs.indexOf(id)
 
     let temp = [...blogs]   //create copy of state [ ]
 
     console.log("temp", temp)
 
     temp[index] = editPost  //  bracket notation to change value of a specific index to "editpost"
+ 
 
     console.log("all blogs", temp)
 
